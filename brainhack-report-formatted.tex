@@ -261,8 +261,7 @@ FreeSurfer's most prominent tool, the \texttt{recon-all} workflow, consists of a
 The purpose of this project is to reconstruct the  \texttt{recon-all} workflow from FreeSurfer's \texttt{tcsh} shell script into an equivalent workflow using \texttt{Nipype}, which \textit{``supports a uniform interface to existing neuroimaging software and facilitates interaction between these packages within a single workflow''}\cite{Gorgolewski2011}. 
 
 The goal of this work is to enhance the efficiency and usability of the workflow by allowing it to take advantage of the increasing availability of high performance computing resources.
-\texttt{Nipype} also enhances the modularity of the workflow which allows for algorithms from other packages (e.g., ANTS, SPM, FSL, BRAINSTools) to be explored, added into the workflow, or take the place of existing processing steps.
-\todo[author=DE,inline]{I added BRAINSTools, and I think we need references for each tool here.}
+\texttt{Nipype} also enhances the modularity of the workflow which allows for algorithms from other packages (e.g., ANTS\cite{Avants2009}, FSL\cite{Woolrich2009}, BRAINSTools\cite{YoungKim2013}\cite{Kim2014}\cite{Kim2015}) to be explored, added into the workflow, or take the place of existing processing steps.
 Therefore, the \texttt{Nipype} environment permits increased collaboration on the \texttt{recon-all} workflow and allows for the limitations of the workflow to be easily addressed.
 
 
@@ -272,14 +271,12 @@ Therefore, the \texttt{Nipype} environment permits increased collaboration on th
 These interfaces allow developers to recreate in a  \texttt{Nipype} workflow the exact same commands used in the FreeSurfer's \texttt{tcsh} script. 
 The \texttt{Nipype} version of the \texttt{recon-all} workflow was then created by using the \texttt{Nipype} interfaces to connect the FreeSurfer commands in the order necessary. 
 To verify that the new \texttt{Nipype} workflow is equivalent to FreeSurfer's \texttt{recon-all} workflow, both workflows were run on the same set of MRI images on multiple platforms (Red Hat Linux 6 and Mac OS X) and in a high-performance computing environment. 
-Output surface files were then converted to VTK file format, and the output image files were converted to NIFTI file format. 
-All the images and surfaces output from FreeSurfer's \texttt{recon-all} workflow were compared to the \texttt{Nipype} \texttt{recon-all} workflow that was run on the same operating system.
-For the workflows run on the Mac OS X operating system, the label and statistical outputs were compared as well.
+Output surface files were converted to VTK file format, and the output image files were converted to NIFTI file format.
+The images and surfaces output from FreeSurfer's \texttt{recon-all} workflow were compared to the outputs from  \texttt{Nipype} \texttt{recon-all} workflow.
 
 \section{Results}\label{results}
 
-All output images from FreeSurfer's \texttt{recon-all} were identical to those of the \texttt{Nipype} workflow that was run on the same operating system.
-\todo[author=DE, inline]{"Future work" may be appropriate to admit the current limitation and saying they could be resolved in the future}
+All output images and surfaces from FreeSurfer's \texttt{recon-all} were identical to those of the \texttt{Nipype} workflow that was run on the same operating system.
 
 \begin{figure}[h]
 \centering
@@ -309,7 +306,7 @@ None
 
 \section*{Author's contributions}
 HJJ performed the project and wrote the report.
-DGE Created \texttt{Nipype} interfaces for the FreeSurfer commands, scripted the \texttt{Nipype} workflows, ran the workflow output comparisons, and contributed to the report.
+DGE created \texttt{Nipype} interfaces for the FreeSurfer commands, scripted the \texttt{Nipype} workflows, ran the workflow output comparisons, and contributed to the report. IO and RK advised on the project and contributed to the report.
 
 \section*{Acknowledgements}
 The authors would like to thank the organizers and attendees of the 2015 OHBM Hackathon.
