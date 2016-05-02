@@ -104,7 +104,7 @@
 
 %%% Put your definitions there:
 \startlocaldefs
-\newcommand{\projURL}{https://github.com/BRAINSia/BRAINSTools}
+\newcommand{\projURL}{https://github.com/nipy/nipype}
 \endlocaldefs
 
 
@@ -277,6 +277,7 @@ The images and surfaces output from FreeSurfer's \texttt{recon-all} workflow wer
 \section{Results}\label{results}
 
 All output images and surfaces from FreeSurfer's \texttt{recon-all} were identical to those of the \texttt{Nipype} workflow that was run on the same operating system.
+During testing, FreeSurfer's \texttt{recon-all} workflow completed processing in over 8.9 hours. The \texttt{Nipype} workflow completed processing in under 6 hours.
 
 \begin{figure}[h]
 \centering
@@ -288,7 +289,12 @@ All output images and surfaces from FreeSurfer's \texttt{recon-all} were identic
 
 \section{Conclusions}\label{conclusions}
 
-The \texttt{Nipype} workflow created in this project was shown to be equivalent to the pre-existing FreeSurfer \texttt{recon-all} workflow. The \texttt{Nipype} environment allows for increased collaboration in further developing the workflow. Future work will involve incorporating more options to the \texttt{Nipype} workflow so that it can function as a complete replacement for the \texttt{tcsh} shell script. The collaborations at the 2015 OHBM BrainHack meeting were instrumental in accomplishing this task. Collaborations with the FreeSurfer, \texttt{Nipype}, and Human Connectome teams allowed members of this project to quickly identify problems and avoid unnecessary failures.
+The \texttt{Nipype} workflow created in this project was shown to be equivalent to the pre-existing FreeSurfer \texttt{recon-all} workflow. 
+Furthermore, by utilizing multiprocessing, the \texttt{Nipype} workflow reduces the running time for \texttt{recon-all} by nearly 3 hours. 
+The \texttt{Nipype} environment also allows for increased collaboration in further developing the workflow. 
+Future work will involve incorporating more options to the \texttt{Nipype} workflow so that it can function as a complete replacement for the \texttt{tcsh} shell script. 
+The collaborations at the 2015 OHBM BrainHack meeting were instrumental in accomplishing this task. 
+Collaborations with the FreeSurfer, \texttt{Nipype}, and Human Connectome teams allowed members of this project to quickly identify problems and avoid unnecessary failures.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
@@ -299,7 +305,7 @@ The \texttt{Nipype} workflow created in this project was shown to be equivalent 
 \begin{backmatter}
 
 \section*{Availability of Supporting Data}
-More information about this project can be found at: \url{\projURL}. Further data and files supporting this project are hosted in the \emph{GigaScience} repository REFXXX.
+The resulting workflow from this project can be found at: \url{\projURL}. An example of how to run the workflow on the \texttt{Nipype} tutorial data can be found at: \url{https://github.com/nipy/nipype/blob/master/examples/smri_fsreconall.py}.
 
 \section*{Competing interests}
 None
