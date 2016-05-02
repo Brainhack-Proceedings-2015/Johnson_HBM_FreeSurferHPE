@@ -270,14 +270,14 @@ Therefore, the \texttt{Nipype} environment permits increased collaboration on th
 \texttt{Nipype} interfaces were created for the tools used in the \texttt{recon-all} workflow. 
 These interfaces allow developers to recreate in a  \texttt{Nipype} workflow the exact same commands used in the FreeSurfer's \texttt{tcsh} script. 
 The \texttt{Nipype} version of the \texttt{recon-all} workflow was then created by using the \texttt{Nipype} interfaces to connect the FreeSurfer commands in the order necessary. 
-To verify that the new \texttt{Nipype} workflow is equivalent to FreeSurfer's \texttt{recon-all} workflow, both workflows were run on the same set of MRI images on multiple platforms (Red Hat Linux 6 and Mac OS X) and in a high-performance computing environment. 
+To verify that the new \texttt{Nipype} workflow is equivalent to FreeSurfer's \texttt{recon-all} workflow, both workflows were run on the same set of MRI images on multiple platforms (CentOS 6.4 and Mac OS X) and in a high-performance computing environment. 
 Output surface files were converted to VTK file format, and the output image files were converted to NIFTI file format.
 The images and surfaces output from FreeSurfer's \texttt{recon-all} workflow were compared to the outputs from  \texttt{Nipype} \texttt{recon-all} workflow.
 
 \section{Results}\label{results}
 
 All output images and surfaces from FreeSurfer's \texttt{recon-all} were identical to those of the \texttt{Nipype} workflow that was run on the same operating system.
-During testing, FreeSurfer's \texttt{recon-all} workflow completed processing in over 8.9 hours. The \texttt{Nipype} workflow completed processing in under 6 hours.
+During testing on a 16 Core CentOS 6.4 machine with 64GB of memory, FreeSurfer's \texttt{recon-all} workflow completed processing in over 8.9 hours. With multiprocessing, the \texttt{Nipype} workflow achieved identical results and completed processing in under 6 hours when tested on the same machine.
 
 \begin{figure}[h]
 \centering
@@ -290,8 +290,7 @@ During testing, FreeSurfer's \texttt{recon-all} workflow completed processing in
 \section{Conclusions}\label{conclusions}
 
 The \texttt{Nipype} workflow created in this project was shown to be equivalent to the pre-existing FreeSurfer \texttt{recon-all} workflow. 
-Furthermore, by utilizing multiprocessing, the \texttt{Nipype} workflow reduces the running time for \texttt{recon-all} by nearly 3 hours. 
-The \texttt{Nipype} environment also allows for increased collaboration in further developing the workflow. 
+Furthermore, by utilizing \texttt{Nipype}'s ability to run commands in parallel, the new workflow reduces the running time of \texttt{recon-all} by over 30\% when compared to FreeSurfer's \textttt{recon-all} script which runs commands in a sequential order. The \texttt{Nipype} environment also allows for increased collaboration in further developing the workflow. 
 Future work will involve incorporating more options to the \texttt{Nipype} workflow so that it can function as a complete replacement for the \texttt{tcsh} shell script. 
 The collaborations at the 2015 OHBM BrainHack meeting were instrumental in accomplishing this task. 
 Collaborations with the FreeSurfer, \texttt{Nipype}, and Human Connectome teams allowed members of this project to quickly identify problems and avoid unnecessary failures.
