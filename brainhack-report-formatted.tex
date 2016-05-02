@@ -10,7 +10,7 @@
 %
 %Hey Hans,
 %
-%You may have received a notification that I created a new github repository for %your HBM hackathon project titled "Wrapping FreeSurfer 6 for use in %High-performance Computing Environments". We are working with GigaScience to %publish all of the project reports from brainhack events in 2015. We are thus %moving all of the abstracts from the book that Jorg put together to the new %format. I have taken the liberty of updating the format, but would you please %look it over before we send it out for review? 
+%You may have received a notification that I created a new github repository for %your HBM hackathon project titled "Wrapping FreeSurfer 6 for use in %High-performance Computing Environments". We are working with GigaScience to %publish all of the project reports from brainhack events in 2015. We are thus %moving all of the abstracts from the book that Jorg put together to the new %format. I have taken the liberty of updating the format, but would you please %look it over before we send it out for review?
 %
 %Here is some more information about what we are expecting for the published %project reports:
 %http://brainhack.org/proceedings-submission-form/.
@@ -218,7 +218,7 @@ email={hans-johnson@uiowa.edu}
 %\begin{abstractbox}
 
 %\begin{abstract} % abstract
-	
+
 %Blank Abstract
 
 %\end{abstract}
@@ -258,19 +258,19 @@ email={hans-johnson@uiowa.edu}
 
 FreeSurfer\cite{Fischl2012} is a popular software suite for automatic analysis of MRI data, including subcortical and cortical segmentation, as well as cortical surface reconstruction and correspondence.
 FreeSurfer's most prominent tool, the \texttt{recon-all} workflow, consists of approximately 170 sequentially run commands in a \texttt{tcsh} shell script that uses approximately 50 unique FreeSurfer tools.
-The purpose of this project is to reconstruct the  \texttt{recon-all} workflow from FreeSurfer's \texttt{tcsh} shell script into an equivalent workflow using \texttt{Nipype}, which \textit{``supports a uniform interface to existing neuroimaging software and facilitates interaction between these packages within a single workflow''}\cite{Gorgolewski2011}. 
+The purpose of this project is to reconstruct the  \texttt{recon-all} workflow from FreeSurfer's \texttt{tcsh} shell script into an equivalent workflow using \texttt{Nipype}, which \textit{``supports a uniform interface to existing neuroimaging software and facilitates interaction between these packages within a single workflow''}\cite{Gorgolewski2011}.
 
 The goal of this work is to enhance the efficiency and usability of the workflow by allowing it to take advantage of the increasing availability of high performance computing resources.
 \texttt{Nipype} also enhances the modularity of the workflow which allows for algorithms from other packages (e.g., ANTS\cite{Avants2009}, FSL\cite{Woolrich2009}, BRAINSTools\cite{YoungKim2013}\cite{Kim2014}\cite{Kim2015}) to be explored, added into the workflow, or take the place of existing processing steps.
 Therefore, the \texttt{Nipype} environment permits increased collaboration on the \texttt{recon-all} workflow and allows for the limitations of the workflow to be easily addressed.
 
 
-%%%%%%% 
+%%%%%%%
 \section{Approach}\label{approach}
-\texttt{Nipype} interfaces were created for the tools used in the \texttt{recon-all} workflow. 
-These interfaces allow developers to recreate in a  \texttt{Nipype} workflow the exact same commands used in the FreeSurfer's \texttt{tcsh} script. 
-The \texttt{Nipype} version of the \texttt{recon-all} workflow was then created by using the \texttt{Nipype} interfaces to connect the FreeSurfer commands in the order necessary. 
-To verify that the new \texttt{Nipype} workflow is equivalent to FreeSurfer's \texttt{recon-all} workflow, both workflows were run on the same set of MRI images on multiple platforms (CentOS 6.4 and Mac OS X) and in a high-performance computing environment. 
+\texttt{Nipype} interfaces were created for the tools used in the \texttt{recon-all} workflow.
+These interfaces allow developers to recreate in a  \texttt{Nipype} workflow the exact same commands used in the FreeSurfer's \texttt{tcsh} script.
+The \texttt{Nipype} version of the \texttt{recon-all} workflow was then created by using the \texttt{Nipype} interfaces to connect the FreeSurfer commands in the order necessary.
+To verify that the new \texttt{Nipype} workflow is equivalent to FreeSurfer's \texttt{recon-all} workflow, both workflows were run on the same set of MRI images on multiple platforms (CentOS 6.4 and Mac OS X) and in a high-performance computing environment.
 Output surface files were converted to VTK file format, and the output image files were converted to NIFTI file format.
 The images and surfaces output from FreeSurfer's \texttt{recon-all} workflow were compared to the outputs from  \texttt{Nipype} \texttt{recon-all} workflow.
 
@@ -289,10 +289,10 @@ During testing on a 16 Core CentOS 6.4 machine with 64GB of memory, FreeSurfer's
 
 \section{Conclusions}\label{conclusions}
 
-The \texttt{Nipype} workflow created in this project was shown to be equivalent to the pre-existing FreeSurfer \texttt{recon-all} workflow. 
-Furthermore, by utilizing \texttt{Nipype}'s ability to run commands in parallel, the new workflow reduces the running time of \texttt{recon-all} by over 30\% when compared to FreeSurfer's \textttt{recon-all} script which runs commands in a sequential order. The \texttt{Nipype} environment also allows for increased collaboration in further developing the workflow. 
-Future work will involve incorporating more options to the \texttt{Nipype} workflow so that it can function as a complete replacement for the \texttt{tcsh} shell script. 
-The collaborations at the 2015 OHBM BrainHack meeting were instrumental in accomplishing this task. 
+The \texttt{Nipype} workflow created in this project was shown to be equivalent to the pre-existing FreeSurfer \texttt{recon-all} workflow.
+Furthermore, by utilizing \texttt{Nipype}'s ability to run commands in parallel, the new workflow reduces the running time of \texttt{recon-all} by over 30\% when compared to FreeSurfer's \texttt{recon-all} script which runs commands in a sequential order. The \texttt{Nipype} environment also allows for increased collaboration in further developing the workflow.
+Future work will involve incorporating more options to the \texttt{Nipype} workflow so that it can function as a complete replacement for the \texttt{tcsh} shell script.
+The collaborations at the 2015 OHBM BrainHack meeting were instrumental in accomplishing this task.
 Collaborations with the FreeSurfer, \texttt{Nipype}, and Human Connectome teams allowed members of this project to quickly identify problems and avoid unnecessary failures.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
